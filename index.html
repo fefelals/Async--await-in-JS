@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript async / await</h2>
+    <h1 id="result"></h1>
+
+    <script>
+      async function add(a, b) {
+        // Create a Promise to simulate async behavior
+        let response = await new Promise((resolve) => {
+          setTimeout(() => resolve(a + b), 10000); // Delay by 1 second
+        });
+        display(response);
+      }
+
+      function display(some) {
+        document.getElementById("result").innerHTML = some;
+      }
+
+      // Call the async function
+      add(5, 20);
+    </script>
+  </body>
+</html>
